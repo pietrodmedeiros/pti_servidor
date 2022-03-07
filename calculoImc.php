@@ -1,41 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="PT-BR">
 <head>
-    <title>CALCULO DE IMC <title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULO DE IMC</title>
 </head>
+<body>
 
     <?php
 
-    $imc = 0;
-    function seuImc($imc) {
+    $nivelImc = [
+        "18.50" => "Magreza",
+        "24.9" => "Saudável",
+        "29.9" => "Sobrepeso",
+        "34.9" => "Obesidade Grau I",
+        "39.9" => "Obesidade Grau II",
+        "40.0" => "Obesidade Grau III"
+    ];
+    function seuImc($imc, $array) {
 
-        $nivelImc = [
-            18.50 => "Magreza",
-            24.9 => "Saudável",
-            29.9 => "Sobrepeso",
-            34.9 => "Obesidade Grau I",
-            39.9 => "Obesidade Grau II",
-            40.0 => "Obesidade Grau III"
-        ]
-        
-        $message = "Atenção, seu IMC é $imc, e você está classificado com $value"
-
-        foreach($nivelImc as $key => $value) {
-            if($imc <= (float) $key) {
-                echo = $message
-                break
+        foreach($array as $key => $value) {
+            $message = "Atenção, seu IMC é " .$imc. " e você está classificado com " .$value;
+            if ((float) $key < 40.0) {
+                if($imc <= (float) $key) {
+                echo $message;
+                break;
+                }
             }
-        }   else {
-            $message
+            else {
+                echo $message;
+            }
         }
     }
-
-    seuImc(22.55)
+    seuImc(22, $nivelImc);
     ?>
 
-    <body>
-        <h1> Atenção, seu IMC é <?php echo $imc ?>, e você está classificado com <?php $value ?> </h1>
-    </body>
-
-
-
+</body>
 </html>
