@@ -1,3 +1,3 @@
 # PTI Linguagem de Servidor
 
-### Setar a variável imc da declaração da função seuImc na linha 36.
+### É possível alterar a variável imc da declaração da função seuImc na linha 36.
